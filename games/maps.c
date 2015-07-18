@@ -33,3 +33,13 @@ void drawMaps(int y, int x){
 		}
 	}
 }
+
+
+int maps_get(int y, int x){
+	return map_get(MAP, y, x);
+}
+
+
+void maps_set(int y, int x, int val){
+	map_set(MAP, y, x, val);
+}
