@@ -13,7 +13,10 @@ char *SYMBOL[SYMBOL_NUM] = {
 };
 
 
-void loadMaps(int size_y, int size_x, char *file_name){	
+void loadMaps(int size_y, int size_x, char *file_name){
+	if( MAP != NULL ){
+		destroyMap(MAP);
+	}
 	MAP = createMap(size_y, size_x);
 	loadMap(MAP, file_name);
 }
