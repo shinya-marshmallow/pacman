@@ -46,3 +46,8 @@ int maps_get(int y, int x){
 void maps_set(int y, int x, int val){
 	map_set(MAP, y, x, val);
 }
+
+
+void destroyMaps(void){
+	destroyMap(MAP);
+}
