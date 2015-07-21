@@ -6,6 +6,8 @@
 #include "pacman.h"
 #include "mapc.h"
 #include "hantei.h"
+#include "cookie.h"
+
 void map(void){
 	int j,i;
 	int max_x,max_y;
@@ -21,6 +23,9 @@ void map(void){
       }
       if(tmp == 2){
 				mvprintw(j, i,"‥");
+			}
+			if(tmp == 0){
+				mvprintw(j,i,"  ");
       }
       j++;
     }
@@ -30,11 +35,10 @@ void map(void){
 
 int main(void){
   /*int i,j;*/
-	double x,y;/*自機の座標*/
+	int x,y;/*自機の座標*/
   int plus = 0;/*移動判別*/
   int inp = 'o';
 	FLAG flag;
-	
 /*  i = 0;
   j = 0;	*/
 
@@ -43,21 +47,21 @@ int main(void){
   noecho();
   curs_set(0);
   keypad(stdscr, TRUE);
-  
+
   x = 10;
   y = 7;
   while(""){
 	mvprintw(19,0,"x = %d  y = %d",x,y);
 	refresh();
 	plus = pacman(inp, x, y);
-	flag = hantei(x, y);
-    if(plus == 1 && flag.ue == 1){
+	/*flag = hantei(x, y);*/
+    if(plus == 1 /*&& flag.ue == 1*/){
       y--;
-    }else if(plus == 2 && flag.sita == 1){
+    }else if(plus == 2 /*&& flag.sita == 1*/){
       y++;
-    }else if(plus == 3 && flag.migi == 1){
+    }else if(plus == 3 /*&& flag.migi == 1*/){
       x=x-2;
-    }else if(plus == 4 && flag.hidari == 1){
+    }else if(plus == 4 /*&& flag.hidari == 1*/){
       x=x+2;
     }
 	clear();

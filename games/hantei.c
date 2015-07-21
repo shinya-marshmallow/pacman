@@ -12,29 +12,29 @@ FLAG hantei(int x, int y){
 	**matrix = mat(max_y,max_x);
 
 	FLAG f;
-	if(matrix[y][x+1] == 1){
+	if(matrix[x+1][y] == 1){
 		f.migi = 0;
-	}else if(matrix[y][x+1] == 2){
+	}else if(matrix[x+1][y] == 2){
 		f.migi = 1;
 	}
 
-	if(matrix[y][x-1] == 1){
-		f.hidari = 0;;
-	}else if(matrix[y][x-1] == 2){
+	if(matrix[x-1][y] == 1){
+		f.hidari = 0;
+	}else if(matrix[x-1][y] == 2){
 		f.hidari = 1;
 	}
 
-	if(matrix[y+1][x] == 1){
+	if(matrix[x][y+1] == 1){
 		f.sita = 0;
-	}else if(matrix[y+1][x] == 2){
+	}else if(matrix[x][y+1] == 2){
 		f.sita = 1;
 	}
 	
 
-	if(matrix[y-1][x] == 1){
+	if(matrix[x][y-1] == 1){
 		f.ue = 0;
-	}else if(matrix[y-1][x] == 2){
+	}else if(matrix[x][y-1] == 2){
 		f.ue = 1;
-	}
+	}	
 	return f;
 }
