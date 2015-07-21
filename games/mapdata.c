@@ -38,18 +38,14 @@ void initMap(MAPDATA *map){
 
 
 int map_get(MAPDATA *map, int y, int x){
-	int *p;
-	p = map->matrix + ((y * map->size_x) + x);
-	
-	return *p;
+
+	return map->matrix[(y*map->size_x) + x];
 }
 
 
 void map_set(MAPDATA *map, int y, int x, int val){
-	int *p;
-	p = map->matrix + ((y * map->size_x) + x);
 	
-	*p = val;
+	map->matrix[(y * map->size_x) + x] = val;
 }
 
 
